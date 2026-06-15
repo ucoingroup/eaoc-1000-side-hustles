@@ -1,0 +1,26 @@
+{
+  "name": "eaoc-1000-side-hustles",
+  "version": "1.0.0",
+  "description": "EACO 1000 Side Hustles for Monetization - 利他外贸副业1000种变现方案",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "android": "vite build && cap sync android",
+    "ios": "vite build && cap sync ios"
+  },
+  "keywords": ["EACO", "side-hustles", "monetization", "cross-border", "altruistic"],
+  "author": "EACO Community",
+  "license": "MIT",
+  "dependencies": {
+    "@capacitor/core": "^5.0.0",
+    "@capacitor/cli": "^5.0.0",
+    "@capacitor/android": "^5.0.0",
+    "@capacitor/ios": "^5.0.0"
+  },
+  "devDependencies": {
+    "vite": "^4.4.0",
+    "vite-plugin-pwa": "^0.16.0"
+  }
+}

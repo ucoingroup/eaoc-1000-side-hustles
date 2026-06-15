@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EACO 1000 Side Hustles for Monetization</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { 'Inter': ['Inter', 'sans-serif'] },
+                    colors: {
+                        'eaco-green': '#10B981',
+                        'eaco-dark': '#064E3B',
+                        'eaco-light': '#D1FAE5',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        * { font-family: 'Inter', sans-serif; }
+        .gradient-bg { background: linear-gradient(135deg, #064E3B 0%, #10B981 50%, #059669 100%); }
+        .card-hover { transition: all 0.3s ease; }
+        .card-hover:hover { transform: translateY(-5px); box-shadow: 0 20px 40px rgba(16, 185, 129, 0.2); }
+        .category-badge { animation: pulse 2s infinite; }
+        @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.7; } }
+        .search-highlight { background: #FEF3C7; padding: 2px 4px; border-radius: 4px; }
+        .filter-active { background: #10B981; color: white; }
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #f1f1f1; }
+        ::-webkit-scrollbar-thumb { background: #10B981; border-radius: 4px; }
+    </style>
+</head>
+<body class="bg-gray-50 min-h-screen">
+    <!-- Header -->
+    <header class="gradient-bg text-white sticky top-0 z-50 shadow-lg">
+        <div class="container mx-auto px-4 py-4">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+                <div class="flex items-center gap-3">
+                    <div class="w-12 h-12 bg-white rounded-xl flex items-center justify-center shadow-lg">
+                        <span class="text-2xl">🌏</span>
+                    </div>
+                    <div>
+                        <h1 class="text-2xl md:text-3xl font-bold">EACO 1000</h1>
+                        <p class="text-green-100 text-sm">Side Hustles for Monetization</p>
+                    </div>
+                </div>
+                <div class="flex flex-col sm:flex-row gap-3 w-full md:w-auto">
+                    <input type="text" id="searchInput" placeholder="🔍 Search 1000 hustles..." 
+                           class="px-4 py-2 rounded-xl w-full sm:w-64 text-gray-800 focus:outline-none focus:ring-2 focus:ring-green-400">
+                    <select id="categoryFilter" class="px-4 py-2 rounded-xl text-gray-800 focus:outline-none focus:ring-2 focus:ring-green-400">
+                        <option value="">All Categories</option>
+                        <option value="content">📝 Content Creation</option>
+                        <option value="tech">💻 Tech Services</option>
+                        <option value="ecommerce">🛒 E-Commerce</option>
+                        <option value="marketing">📈 Marketing</option>
+                        <option value="logistics">🚚 Logistics</option>
+                        <option value="finance">💰 Finance</option>
+                        <option value="compliance">⚖️ Compliance</option>
+                        <option value="web3">⛓️ Web3 Services</option>
+                        <option value="education">🎓 Education</option>
+                        <option value="lifestyle">❤️ Lifestyle</option>
+                    </select>
+                </div>
+            </div>
+            <div class="mt-4 flex flex-wrap gap-2">
+                <span class="bg-white/20 px-3 py-1 rounded-full text-sm">💰 Total: <strong id="totalCount">1000</strong></span>
+                <span class="bg-white/20 px-3 py-1 rounded-full text-sm">🌟 Featured: <strong>100</strong></span>
+                <span class="bg-white/20 px-3 py-1 rounded-full text-sm">🔥 Updated: Weekly</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="gradient-bg text-white py-16">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-4xl md:text-5xl font-bold mb-4">🚀 1000 Ways to Monetize</h2>
+            <p class="text-xl text-green-100 mb-8 max-w-2xl mx-auto">
+                Discover利他 (Altruistic) side hustles that create value first, profit follows. 
+                Powered by EACO Token ecosystem.
+            </p>
+            <div class="flex flex-wrap justify-center gap-4">
+                <button onclick="scrollToCategory('all')" class="bg-white text-green-700 px-6 py-3 rounded-xl font-semibold hover:bg-green-50 transition">View All Hustles</button>
+                <button onclick="showRandom()" class="border-2 border-white px-6 py-3 rounded-xl font-semibold hover:bg-white/10 transition">🎲 Random Pick</button>
+                <a href="#categories" class="border-2 border-white px-6 py-3 rounded-xl font-semibold hover:bg-white/10 transition">📂 Browse Categories</a>
+            </div>
+            <div class="mt-8 grid grid-cols-2 md:grid-cols-4 gap-4 max-w-3xl mx-auto">
+                <div class="bg-white/10 rounded-xl p-4">
+                    <div class="text-3xl font-bold">$0-100</div>
+                    <div class="text-sm text-green-100">Startup Cost</div>
+                </div>
+                <div class="bg-white/10 rounded-xl p-4">
+                    <div class="text-3xl font-bold">100-1000+</div>
+                    <div class="text-sm text-green-100">Monthly Income</div>
+                </div>
+                <div class="bg-white/10 rounded-xl p-4">
+                    <div class="text-3xl font-bold">10</div>
+                    <div class="text-sm text-green-100">Categories</div>
+                </div>
+                <div class="bg-white/10 rounded-xl p-4">
+                    <div class="text-3xl font-bold">24/7</div>
+                    <div class="text-sm text-green-100">Auto Updates</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Bar -->
+    <section class="bg-white shadow-md py-4">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-wrap justify-center gap-8 text-center">
+                <div><span class="text-2xl font-bold text-green-600" id="statCompleted">240</span><span class="text-gray-500">+ Completed</span></div>
+                <div><span class="text-2xl font-bold text-green-600">760</span><span class="text-gray-500">+ Coming Soon</span></div>
+                <div><span class="text-2xl font-bold text-green-600">1000</span><span class="text-gray-500"> Total Goal</span></div>
+                <div><span class="text-2xl font-bold text-green-600">Weekly</span><span class="text-gray-500"> Auto Update</span></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Categories Section -->
+    <section id="categories" class="py-12 bg-white">
+        <div class="container mx-auto px-4">
+            <h3 class="text-3xl font-bold text-center mb-8">📂 Browse by Category</h3>
+            <div class="grid grid-cols-2 md:grid-cols-5 gap-4" id="categoryGrid">
+                <button onclick="filterByCategory('')" class="category-badge bg-green-100 text-green-700 p-4 rounded-xl font-semibold hover:bg-green-200 transition">
+                    🌐 All Hustles<br><span class="text-sm">1000 Total</span>
+                </button>
+                <button onclick="filterByCategory('content')" class="bg-blue-100 text-blue-700 p-4 rounded-xl font-semibold hover:bg-blue-200 transition">
+                    📝 Content<br><span class="text-sm">100 Hustles</span>
+                </button>
+                <button onclick="filterByCategory('tech')" class="bg-purple-100 text-purple-700 p-4 rounded-xl font-semibold hover:bg-purple-200 transition">
+                    💻 Tech<br><span class="text-sm">100 Hustles</span>
+                </button>
+                <button onclick="filterByCategory('ecommerce')" class="bg-orange-100 text-orange-700 p-4 rounded-xl font-semibold hover:bg-orange-200 transition">
+                    🛒 E-Commerce<br><span class="text-sm">100 Hustles</span>
+                </button>
+                <button onclick="filterByCategory('marketing')" class="bg-pink-100 text-pink-700 p-4 rounded-xl font-semibold hover:bg-pink-200 transition">
+                    📈 Marketing<br><span class="text-sm">100 Hustles</span>
+                </button>
+                <button onclick="filterByCategory('logistics')" class="bg-cyan-100 text-cyan-700 p-4 rounded-xl font-semibold hover:bg-cyan-200 transition">
+                    🚚 Logistics<br><span class="text-sm">100 Hustles</span>
+                </button>
+                <button onclick="filterByCategory('finance')" class="bg-yellow-100 text-yellow-700 p-4 rounded-xl font-semibold hover:bg-yellow-200 transition">
+                    💰 Finance<br><span class="text-sm">100 Hustles</span>
+                </button>
+                <button onclick="filterByCategory('compliance')" class="bg-red-100 text-red-700 p-4 rounded-xl font-semibold hover:bg-red-200 transition">
+                    ⚖️ Compliance<br><span class="text-sm">100 Hustles</span>
+                </button>
+                <button onclick="filterByCategory('web3')" class="bg-indigo-100 text-indigo-700 p-4 rounded-xl font-semibold hover:bg-indigo-200 transition">
+                    ⛓️ Web3<br><span class="text-sm">100 Hustles</span>
+                </button>
+                <button onclick="filterByCategory('education')" class="bg-teal-100 text-teal-700 p-4 rounded-xl font-semibold hover:bg-teal-200 transition">
+                    🎓 Education<br><span class="text-sm">100 Hustles</span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Hustles Grid -->
+    <section class="py-12 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center mb-6">
+                <h3 class="text-2xl font-bold" id="hustlesTitle">🔥 Featured Hustles (1-100)</h3>
+                <div class="flex gap-2">
+                    <button onclick="sortBy('popular')" class="px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition">🔥 Popular</button>
+                    <button onclick="sortBy('income')" class="px-4 py-2 bg-gray-200 text-gray-700 rounded-lg hover:bg-gray-300 transition">💰 Income</button>
+                    <button onclick="sortBy('easy')" class="px-4 py-2 bg-gray-200 text-gray-700 rounded-lg hover:bg-gray-300 transition">⚡ Easy Start</button>
+                </div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="hustlesGrid">
+                <!-- Hustle cards will be rendered here -->
+            </div>
+            <div class="mt-8 text-center">
+                <button id="loadMoreBtn" onclick="loadMore()" class="bg-green-600 text-white px-8 py-3 rounded-xl font-semibold hover:bg-green-700 transition">
+                    Load More Hustles ↓
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- EACO Token Section -->
+    <section class="py-16 gradient-bg text-white">
+        <div class="container mx-auto px-4 text-center">
+            <h3 class="text-3xl font-bold mb-4">⛓️ EACO Token Ecosystem</h3>
+            <p class="text-green-100 mb-8 max-w-2xl mx-auto">
+                Each hustle is powered by EACO tokens. Earn EACO by contributing, spend EACO to access premium resources.
+            </p>
+            <div class="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+                <div class="bg-white/10 rounded-xl p-6">
+                    <div class="text-4xl mb-4">⚡ Energy</div>
+                    <p class="text-green-100">Actively contribute to the ecosystem</p>
+                </div>
+                <div class="bg-white/10 rounded-xl p-6">
+                    <div class="text-4xl mb-4">🤝 Attitude</div>
+                    <p class="text-green-100">Collaborate with 利他 spirit</p>
+                </div>
+                <div class="bg-white/10 rounded-xl p-6">
+                    <div class="text-4xl mb-4">💎 Cooperation</div>
+                    <p class="text-green-100">Build long-term partnerships</p>
+                </div>
+            </div>
+            <div class="mt-8">
+                <a href="#" class="bg-white text-green-700 px-8 py-3 rounded-xl font-semibold hover:bg-green-50 transition">
+                    Learn More About EACO →
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center gap-2 mb-4">
+                        <span class="text-2xl">🌏</span>
+                        <span class="font-bold text-xl">EACO 1000</span>
+                    </div>
+                    <p class="text-gray-400">1000 Side Hustles for Monetization. 利他利己，创造价值。</p>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-green-400">Home</a></li>
+                        <li><a href="#categories" class="hover:text-green-400">Categories</a></li>
+                        <li><a href="#" class="hover:text-green-400">EACO Token</a></li>
+                        <li><a href="#" class="hover:text-green-400">Contribute</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Categories</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-green-400">Content Creation</a></li>
+                        <li><a href="#" class="hover:text-green-400">Tech Services</a></li>
+                        <li><a href="#" class="hover:text-green-400">E-Commerce</a></li>
+                        <li><a href="#" class="hover:text-green-400">Web3 Services</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Connect</h4>
+                    <div class="flex gap-4">
+                        <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-green-600 transition">𝕏</a>
+                        <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-green-600 transition">📱</a>
+                        <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-green-600 transition">💬</a>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-8 pt-8 border-t border-gray-800 text-center text-gray-400">
+                <p>© 2026 EACO 1000 Side Hustles. Built with ❤️ for 利他 entrepreneurs worldwide.</p>
+                <p class="mt-2">Contract: DqfoyZH96RnvZusSp3Cdncjpyp3C74ZmJzGhjmHnDHRH</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Mobile Bottom Nav -->
+    <nav class="fixed bottom-0 left-0 right-0 bg-white border-t shadow-lg md:hidden">
+        <div class="flex justify-around py-2">
+            <button onclick="scrollToCategory('all')" class="flex flex-col items-center p-2 text-green-600">
+                <span class="text-xl">🏠</span><span class="text-xs">Home</span>
+            </button>
+            <button onclick="document.getElementById('searchInput').focus()" class="flex flex-col items-center p-2 text-gray-500">
+                <span class="text-xl">🔍</span><span class="text-xs">Search</span>
+            </button>
+            <button onclick="showRandom()" class="flex flex-col items-center p-2 text-gray-500">
+                <span class="text-xl">🎲</span><span class="text-xs">Random</span>
+            </button>
+            <button onclick="filterByCategory('')" class="flex flex-col items-center p-2 text-gray-500">
+                <span class="text-xl">📂</span><span class="text-xs">Categories</span>
+            </button>
+        </div>
+    </nav>
+
+    <script>
+        // EACO 1000 Hustles Data (Sample - 100 featured)
+        const hustles = [
+            { id: 1, title: "Free AI Content Writing + EACO Tips", category: "content", emoji: "📝", altruistic: "Helps 100+ sellers improve conversion 40%", startup: "$0", income: "$3000-15000", eaco: "200-1000 EACO/tip" },
+            { id: 2, title: "Free Web3 Consulting + EACO Donation", category: "web3", emoji: "⛓️", altruistic: "Avoids scams worth $10K+ for beginners", startup: "$0", income: "$5000-25000", eaco: "500-2000 EACO/consult" },
+            { id: 3, title: "Free Cross-Border Store Setup Guide", category: "ecommerce", emoji: "🛒", altruistic: "Saves 2-4 weeks of trial & error", startup: "$0", income: "$8000-40000", eaco: "500-2000 EACO/setup" },
+            { id: 4, title: "Free SE Asian Market Research", category: "content", emoji: "🌏", altruistic: "Helps capture trending products early", startup: "$0", income: "$3000-15000", eaco: "300-1000 EACO/report" },
+            { id: 5, title: "Free Logistics Comparison Tool", category: "logistics", emoji: "🚚", altruistic: "Saves 15-30% shipping cost monthly", startup: "$5000", income: "$10000-25000", eaco: "5-10% savings share" },
+            { id: 6, title: "Free Compliance Checklist", category: "compliance", emoji: "⚖️", altruistic: "Prevents fines of $5K-500K", startup: "$0", income: "$5000-30000", eaco: "300-1500 EACO/audit" },
+            { id: 7, title: "Free Listing Optimization Guide", category: "ecommerce", emoji: "📈", altruistic: "Improves conversion 20-50%", startup: "$0", income: "$5000-30000", eaco: "200-1000 EACO/optimize" },
+            { id: 8, title: "Free Ad Strategy Sharing", category: "marketing", emoji: "📊", altruistic: "Reduces ACOS 10-30%", startup: "$2000", income: "$8000-40000", eaco: "500-2000 EACO/month" },
+            { id: 9, title: "Free Competitor Analysis Template", category: "marketing", emoji: "🔍", altruistic: "Saves 40+ hours monthly research", startup: "$0", income: "$3000-15000", eaco: "200-800 EACO/template" },
+            { id: 10, title: "Free Review Management Guide", category: "ecommerce", emoji: "⭐", altruistic: "Improves rating 3→4.5 stars+", startup: "$0", income: "$3000-20000", eaco: "200-1000 EACO/review" },
+            { id: 11, title: "Free Multi-language Customer Service", category: "content", emoji: "🌍", altruistic: "Serves global customers 24/7", startup: "$0", income: "$3000-15000", eaco: "100-300 EACO/1K chars" },
+            { id: 12, title: "Free Payment Gateway Guide", category: "finance", emoji: "💳", altruistic: "Reduces payment fees 30-50%", startup: "$3000", income: "$8000-40000", eaco: "500-2000 EACO/guide" },
+            { id: 13, title: "Free Tax Planning Consultation", category: "compliance", emoji: "🧾", altruistic: "Lowers tax burden 10-30%", startup: "$10000", income: "$20000-100000", eaco: "500-3000 EACO/plan" },
+            { id: 14, title: "Free Product Photography Tips", category: "content", emoji: "📸", altruistic: "Boosts conversion 30-60%", startup: "$2000", income: "$3000-15000", eaco: "200-800 EACO/tips" },
+            { id: 15, title: "Free SEO Keyword Research", category: "marketing", emoji: "🔍", altruistic: "Increases organic traffic 50-200%", startup: "$1000", income: "$5000-25000", eaco: "300-1000 EACO/research" },
+            { id: 16, title: "Free Warehouse Selection Guide", category: "logistics", emoji: "🏠", altruistic: "Saves warehouse fees 10-25%", startup: "$8000", income: "$12000-25000", eaco: "500-2000 EACO/guide" },
+            { id: 17, title: "Free Brand Story Writing", category: "content", emoji: "📖", altruistic: "Builds brand premium 20-50%", startup: "$0", income: "$3000-15000", eaco: "200-1000 EACO/story" },
+            { id: 18, title: "Free Return Policy Design", category: "ecommerce", emoji: "🔄", altruistic: "Reduces return rate 15-30%", startup: "$0", income: "$3000-15000", eaco: "200-800 EACO/policy" },
+            { id: 19, title: "Free Social Media Content Calendar", category: "marketing", emoji: "📱", altruistic: "Saves 10+ hours weekly planning", startup: "$0", income: "$2000-10000", eaco: "100-500 EACO/calendar" },
+            { id: 20, title: "Free Influencer Matching Service", category: "marketing", emoji: "🌟", altruistic: "Matches 3 influencers free trial", startup: "$15000", income: "$15000-35000", eaco: "5-15% commission" },
+            { id: 21, title: "Free ESG Report Writing", category: "content", emoji: "🌱", altruistic: "Improves ESG rating, lowers financing cost", startup: "$15000", income: "$20000-50000", eaco: "5000-20000 EACO/report" },
+            { id: 22, title: "Free Cross-cultural Marketing Strategy", category: "marketing", emoji: "🌍", altruistic: "Avoids cultural mistakes costing $200K+", startup: "$20000", income: "$30000-80000", eaco: "8000-30000 EACO/strategy" },
+            { id: 23, title: "Free Crisis PR Handbook", category: "content", emoji: "🛡️", altruistic: "Reduces crisis damage 50-80%", startup: "$10000", income: "$25000-60000", eaco: "10000-30000 EACO/handbook" },
+            { id: 24, title: "Free KOL Compliance Review", category: "compliance", emoji: "⚖️", altruistic: "Prevents FTC fines $50K-500K per incident", startup: "$12000", income: "$18000-45000", eaco: "2000-5000 EACO/review" },
+            { id: 25, title: "Free Knowledge Management System", category: "tech", emoji: "🧠", altruistic: "Reduces knowledge loss, improves efficiency 30%", startup: "$25000", income: "$30000-70000", eaco: "20000-80000 EACO/system" },
+            { id: 26, title: "Free Whitepaper Co-creation", category: "content", emoji: "📚", altruistic: "Brings 50+ high-quality inquiries", startup: "$18000", income: "$40000-100000", eaco: "30000-100000 EACO/whitepaper" },
+            { id: 27, title: "Free Training Course Development", category: "education", emoji: "🎓", altruistic: "Reduces external training cost 60%", startup: "$20000", income: "$25000-60000", eaco: "15000-50000 EACO/course" },
+            { id: 28, title: "Free Brand Story Video Planning", category: "content", emoji: "🎬", altruistic: "Improves conversion 40-80%", startup: "$22000", income: "$30000-70000", eaco: "10000-30000 EACO/video" },
+            { id: 29, title: "Free Case Study Database", category: "content", emoji: "📖", altruistic: "Shortens sales cycle 30-50%", startup: "$8000", income: "$15000-40000", eaco: "3000-8000 EACO/case" },
+            { id: 30, title: "Free SDGs Action Plan", category: "compliance", emoji: "🌱", altruistic: "Meets ESG requirements, avoids order loss", startup: "$16000", income: "$30000-80000", eaco: "15000-50000 EACO/plan" },
+            { id: 31, title: "Free Overseas Factory Tour Video", category: "content", emoji: "🏭", altruistic: "Builds trust, improves conversion 50%", startup: "$18000", income: "$20000-50000", eaco: "5000-15000 EACO/video" },
+            { id: 32, title: "Free Product Demo Video Series", category: "content", emoji: "📹", altruistic: "Reduces after-sales issues 40%", startup: "$12000", income: "$18000-45000", eaco: "8000-20000 EACO/series" },
+            { id: 33, title: "Free Exhibition Live Streaming", category: "marketing", emoji: "📡", altruistic: "Expands reach 5-10x for non-attendees", startup: "$20000", income: "$25000-60000", eaco: "10000-30000 EACO/live" },
+            { id: 34, title: "Free Executive Interview Series", category: "content", emoji: "🎤", altruistic: "Personalizes brand, boosts LinkedIn 200-300%", startup: "$15000", income: "$20000-50000", eaco: "8000-20000 EACO/episode" },
+            { id: 35, title: "Free Video Localization", category: "content", emoji: "🌍", altruistic: "Improves conversion 60-90% in local markets", startup: "$10000", income: "$15000-40000", eaco: "5000-12000 EACO/localization" },
+            { id: 36, title: "Free Logistics Visualization Video", category: "logistics", emoji: "📦", altruistic: "Reduces customer complaints 35%", startup: "$16000", income: "$20000-50000", eaco: "10000-25000 EACO/video" },
+            { id: 37, title: "Free Product Comparison Review", category: "content", emoji: "⚖️", altruistic: "Builds trust, reduces returns 30%", startup: "$14000", income: "$18000-45000", eaco: "8000-20000 EACO/review" },
+            { id: 38, title: "Free TikTok/Reels Short Video", category: "marketing", emoji: "📱", altruistic: "Increases brand exposure 300-500%", startup: "$8000", income: "$20000-50000", eaco: "8000-20000 EACO/month" },
+            { id: 39, title: "Free Installation Tutorial Series", category: "education", emoji: "🔧", altruistic: "Reduces after-sales cost 50%", startup: "$12000", income: "$15000-40000", eaco: "10000-30000 EACO/series" },
+            { id: 40, title: "Free KOL Collaboration Planning", category: "marketing", emoji: "🌟", altruistic: "Brings 100-500 high-quality inquiries", startup: "$10000", income: "$25000-60000", eaco: "15000-40000 EACO/project" },
+            { id: 41, title: "Free Podcast Planning", category: "content", emoji: "🎙️", altruistic: "Builds professional image, 15-25% conversion", startup: "$12000", income: "$15000-40000", eaco: "10000-25000 EACO/season" },
+            { id: 42, title: "Free Expert Interview Series", category: "content", emoji: "🎤", altruistic: "Brings high-quality B2B leads", startup: "$8000", income: "$18000-45000", eaco: "15000-30000 EACO/season" },
+            { id: 43, title: "Free Audiobook Production", category: "content", emoji: "📚", altruistic: "Improves brand memory, repeat rate +30-50%", startup: "$10000", income: "$20000-50000", eaco: "20000-50000 EACO/audiobook" },
+            { id: 44, title: "Free Skill Audio Course", category: "education", emoji: "🎓", altruistic: "Saves 40% learning time", startup: "$6000", income: "$12000-30000", eaco: "15000-30000 EACO/course" },
+            { id: 45, title: "Free Thank You Voice Card", category: "content", emoji: "💌", altruistic: "Improves customer loyalty, repeat rate +20-35%", startup: "$3000", income: "$8000-20000", eaco: "50-200 EACO/card" },
+            { id: 46, title: "Free Weekly News Audio", category: "content", emoji: "📰", altruistic: "Saves 70% reading time", startup: "$5000", income: "$10000-25000", eaco: "199/month subscription" },
+            { id: 47, title: "Free Multi-language Product narration", category: "content", emoji: "🔊", altruistic: "Improves inquiry conversion 40-60%", startup: "$6000", income: "$10000-25000", eaco: "3000-8000 EACO/language" },
+            { id: 48, title: "Free Training Audio Library", category: "education", emoji: "🧠", altruistic: "New employee efficiency +50%", startup: "$8000", income: "$15000-40000", eaco: "20000-50000 EACO/library" },
+            { id: 49, title: "Free Negotiation Script Audio", category: "education", emoji: "🤝", altruistic: "Success rate +30-50%", startup: "$4000", income: "$10000-25000", eaco: "5000-15000 EACO/scenario" },
+            { id: 50, title: "Free Clubhouse/Podcast Operations", category: "marketing", emoji: "🎧", altruistic: "Brings 30-100 high-quality connections", startup: "$5000", income: "$12000-30000", eaco: "6000-15000 EACO/month" },
+            { id: 51, title: "Free Industry Insight Report", category: "content", emoji: "📊", altruistic: "Saves research cost $100K-300K", startup: "$8000", income: "$15000-40000", eaco: "40-60% sales share" },
+            { id: 52, title: "Free Case Study Production", category: "content", emoji: "📖", altruistic: "Improves conversion 50-80%", startup: "$6000", income: "$12000-30000", eaco: "5000-12000 EACO/case" },
+            { id: 53, title: "Free Cross-cultural素材 Package", category: "content", emoji: "🎨", altruistic: "Saves modification cost $50K-150K", startup: "$10000", income: "$15000-40000", eaco: "8000-20000 EACO/package" },
+            { id: 54, title: "Free Product Selection Guide", category: "ecommerce", emoji: "📋", altruistic: "Reduces after-sales disputes 30-50%", startup: "$5000", income: "$10000-25000", eaco: "10000-25000 EACO/guide" },
+            { id: 55, title: "Free Carousel Design", category: "marketing", emoji: "🖼️", altruistic: "Increases engagement 200-400%", startup: "$4000", income: "$10000-25000", eaco: "3000-8000 EACO/set" },
+            { id: 56, title: "Free Anniversary Planning", category: "marketing", emoji: "🎉", altruistic: "Improves customer loyalty 30%", startup: "$8000", income: "$20000-50000", eaco: "15000-40000 EACO/event" },
+            { id: 57, title: "Free Knowledge Graph Design", category: "content", emoji: "🧠", altruistic: "Improves learning efficiency 60%", startup: "$6000", income: "$12000-30000", eaco: "10000-30000 EACO/graph" },
+            { id: 58, title: "Free Thank You Template Library", category: "content", emoji: "💌", altruistic: "Improves satisfaction, repeat rate +25%", startup: "$2000", income: "$6000-15000", eaco: "199-999 EACO/set" },
+            { id: 59, title: "Free Info-graphic Design", category: "content", emoji: "📊", altruistic: "Improves understanding 80%", startup: "$3000", income: "$8000-20000", eaco: "2000-5000 EACO/design" },
+            { id: 60, title: "Free CSR Report Design", category: "compliance", emoji: "🌱", altruistic: "Meets buyer CSR requirements", startup: "$10000", income: "$20000-50000", eaco: "15000-40000 EACO/report" },
+            { id: 61, title: "Free Website Multi-language Audit", category: "tech", emoji: "🔍", altruistic: "Avoids losses $100K-500K", startup: "$8000", income: "$15000-40000", eaco: "5000-15000 EACO/audit" },
+            { id: 62, title: "Free Listing Localization", category: "ecommerce", emoji: "🛒", altruistic: "Improves ranking 30-60%, conversion +40%", startup: "$3000", income: "$10000-30000", eaco: "500-1500 EACO/listing" },
+            { id: 63, title: "Free Contract Translation", category: "compliance", emoji: "⚖️", altruistic: "Avoids legal loopholes $500K-5M", startup: "$12000", income: "$18000-45000", eaco: "0.3-0.8/character" },
+            { id: 64, title: "Free Chatbot Training & Deployment", category: "tech", emoji: "🤖", altruistic: "Saves 60% labor cost, 24/7 response", startup: "$8000", income: "$15000-40000", eaco: "10000-25000 EACO/deploy" },
+            { id: 65, title: "Free AI Description Generator", category: "tech", emoji: "✍️", altruistic: "Saves 80% copywriting time", startup: "$6000", income: "$12000-30000", eaco: "15000-30000 EACO/customize" },
+            { id: 66, title: "Free Email AI Reply System", category: "tech", emoji: "📧", altruistic: "Improves reply rate 30-50%", startup: "$5000", income: "$10000-25000", eaco: "12000-25000 EACO/system" },
+            { id: 67, title: "Free Competitor Monitoring System", category: "tech", emoji: "🔍", altruistic: "Real-time monitoring, proactive response", startup: "$10000", income: "$20000-50000", eaco: "20000-50000 EACO/system" },
+            { id: 68, title: "Free Smart Contract Review", category: "web3", emoji: "📜", altruistic: "Reduces contract risk 70%", startup: "$15000", income: "$25000-60000", eaco: "25000-60000 EACO/review" },
+            { id: 69, title: "Free NFT Membership System", category: "web3", emoji: "🎨", altruistic: "Improves loyalty 50-100%", startup: "$20000", income: "$30000-80000", eaco: "30000-80000 EACO/system" },
+            { id: 70, title: "Free Blockchain Traceability", category: "web3", emoji: "🔗", altruistic: "Improves premium 20-50%", startup: "$30000", income: "$40000-100000", eaco: "50000-150000 EACO/certification" },
+            { id: 71, title: "Free DAO Advisory", category: "web3", emoji: "⚖️", altruistic: "Reduces management cost 30%", startup: "$10000", income: "$30000-80000", eaco: "30000-80000 EACO/advisory" },
+            { id: 72, title: "Free Crypto Payment Integration", category: "finance", emoji: "💰", altruistic: "Reduces payment cost 60-80%", startup: "$12000", income: "$20000-50000", eaco: "15000-40000 EACO/solution" },
+            { id: 73, title: "Free Metaverse Exhibition Hall", category: "web3", emoji: "🏢", altruistic: "Saves 80% travel cost", startup: "$25000", income: "$40000-100000", eaco: "50000-150000 EACO/hall" },
+            { id: 74, title: "Free Data Governance Consulting", category: "tech", emoji: "📊", altruistic: "Avoids losses $1M+ from bad decisions", startup: "$15000", income: "$30000-80000", eaco: "20000-50000 EACO/consulting" },
+            { id: 75, title: "Free Competitor Price Monitoring", category: "tech", emoji: "💹", altruistic: "Improves margin 10-25%", startup: "$6000", income: "$10000-25000", eaco: "2000-5000/month subscription" },
+            { id: 76, title: "Free Inventory Optimization", category: "logistics", emoji: "📊", altruistic: "Releases capital $50K-200K", startup: "$8000", income: "$20000-50000", eaco: "15000-30000 EACO/optimization" },
+            { id: 77, title: "Free Customer Lifetime Value Analysis", category: "finance", emoji: "💎", altruistic: "Marketing ROI +50-100%", startup: "$5000", income: "$15000-40000", eaco: "10000-25000 EACO/report" },
+            { id: 78, title: "Free Demand Forecasting Model", category: "tech", emoji: "🔮", altruistic: "Saves $300K-500K/year", startup: "$10000", income: "$25000-60000", eaco: "20000-50000 EACO/model" },
+            { id: 79, title: "Free Ad ROI Attribution Analysis", category: "marketing", emoji: "📈", altruistic: "Reduces CPL cost 30-50%", startup: "$6000", income: "$12000-30000", eaco: "8000-20000 EACO/report" },
+            { id: 80, title: "Free Social Media Sentiment Analysis", category: "marketing", emoji: "🛡️", altruistic: "Protects brand reputation", startup: "$4000", income: "$10000-25000", eaco: "5000-12000/month subscription" },
+            { id: 81, title: "Free Supplier Audit Service", category: "ecommerce", emoji: "🔍", altruistic: "Avoids losses $20K-100K per incident", startup: "$5000", income: "$10000-20000", eaco: "500-2000 EACO/audit" },
+            { id: 82, title: "Free Raw Material Price Comparison", category: "ecommerce", emoji: "💎", altruistic: "Reduces cost 8-20%", startup: "$3000", income: "$8000-18000", eaco: "5-10% savings share" },
+            { id: 83, title: "Free Sample Management Service", category: "logistics", emoji: "📦", altruistic: "Shortens selection cycle 30%", startup: "$5000", income: "$6000-12000", eaco: "100-500 EACO/sample" },
+            { id: 84, title: "Free OEM/ODM Matching Service", category: "ecommerce", emoji: "🏭", altruistic: "Saves 2-4 weeks, avoids losses $50K+", startup: "$10000", income: "$15000-30000", eaco: "3-8% commission" },
+            { id: 85, title: "Free Quality Standard Development", category: "compliance", emoji: "✅", altruistic: "Reduces return rate 20-40%", startup: "$8000", income: "$10000-22000", eaco: "500-2000 EACO/standard" },
+            { id: 86, title: "Free Packaging Design Optimization", category: "ecommerce", emoji: "🎨", altruistic: "Saves 10-25% shipping cost", startup: "$10000", income: "$8000-16000", eaco: "500-2000 EACO/design" },
+            { id: 87, title: "Free Supplier CRM SaaS", category: "tech", emoji: "💼", altruistic: "Improves efficiency 50%", startup: "$40000", income: "$25000-60000", eaco: "2000-5000/month subscription" },
+            { id: 88, title: "Free Compliance Purchasing Advisory", category: "compliance", emoji: "⚖️", altruistic: "Avoids infringement losses $30K-150K", startup: "$8000", income: "$10000-22000", eaco: "500-2000 EACO/advisory" },
+            { id: 89, title: "Free Flexible Supply Chain Setup", category: "logistics", emoji: "🔗", altruistic: "Reduces MOQ from 500 to 50", startup: "$15000", income: "$12000-28000", eaco: "500-2000 EACO/setup" },
+            { id: 90, title: "Free Head-end Logistics Comparison", category: "logistics", emoji: "🚢", altruistic: "Saves 15-30% shipping cost", startup: "$5000", income: "$10000-25000", eaco: "5-10% savings share" },
+            { id: 91, title: "Free FBA Inventory Warning", category: "logistics", emoji: "⚠️", altruistic: "Avoids losses $50K+/year", startup: "$15000", income: "$12000-28000", eaco: "500-2000/month subscription" },
+            { id: 92, title: "Free Overseas Warehouse Matching", category: "logistics", emoji: "🏠", altruistic: "Saves 10-25% warehouse fees", startup: "$8000", income: "$12000-25000", eaco: "500-2000 EACO/match" },
+            { id: 93, title: "Free Return Processing Service", category: "logistics", emoji: "♻️", altruistic: "Recovers 60% returned goods", startup: "$20000", income: "$15000-30000", eaco: "500-2000 EACO/process" },
+            { id: 94, title: "Free Logistics Exception Handling", category: "logistics", emoji: "🆘", altruistic: "Recovery rate from 30% to 80%+", startup: "$5000", income: "$10000-20000", eaco: "10-15% recovery share" },
+            { id: 95, title: "Free Last Mile Optimization", category: "logistics", emoji: "🚚", altruistic: "Delivery success rate to 95%+", startup: "$10000", income: "$10000-22000", eaco: "500-2000 EACO/optimization" },
+            { id: 96, title: "Free Logistics Insurance Agency", category: "finance", emoji: "🛡️", altruistic: "Premium 20-40% lower", startup: "$8000", income: "$8000-18000", eaco: "5-15% commission" },
+            { id: 97, title: "Free Cold Chain Connection", category: "logistics", emoji: "❄️", altruistic: "Damage rate from 15% to 3%", startup: "$15000", income: "$12000-25000", eaco: "500-2000 EACO/connection" },
+            { id: 98, title: "Free Multi-modal Transport Planning", category: "logistics", emoji: "🌐", altruistic: "Cost reduction 10-20%", startup: "$10000", income: "$10000-22000", eaco: "500-2000 EACO/plan" },
+            { id: 99, title: "Free Logistics Tracking Visualization", category: "logistics", emoji: "📍", altruistic: "Customer satisfaction +25%", startup: "$20000", income: "$15000-35000", eaco: "500-2000/month subscription" },
+            { id: 100, title: "Free Collection Payment Access", category: "finance", emoji: "📱", altruistic: "Conversion rate +20-40%", startup: "$15000", income: "$15000-35000", eaco: "500-2000 EACO/access" },
+        ];
+
+        let currentPage = 1;
+        const pageSize = 30;
+        let currentFilter = '';
+        let currentSort = 'popular';
+
+        function renderHustles() {
+            const grid = document.getElementById('hustlesGrid');
+            let filtered = hustles;
+            
+            if (currentFilter) {
+                filtered = hustles.filter(h => h.category === currentFilter);
+            }
+            
+            const start = 0;
+            const end = currentPage * pageSize;
+            const displayed = filtered.slice(start, end);
+            
+            grid.innerHTML = displayed.map(h => `
+                <div class="bg-white rounded-xl p-6 shadow-md card-hover cursor-pointer" onclick="showDetail(${h.id})">
+                    <div class="flex items-center gap-3 mb-4">
+                        <span class="text-3xl">${h.emoji}</span>
+                        <div>
+                            <span class="text-xs bg-${getCategoryColor(h.category)}-100 text-${getCategoryColor(h.category)}-700 px-2 py-1 rounded-full">${h.category}</span>
+                        </div>
+                    </div>
+                    <h4 class="font-bold text-lg mb-2">${h.title}</h4>
+                    <p class="text-gray-600 text-sm mb-4">${h.altruistic}</p>
+                    <div class="grid grid-cols-2 gap-2 text-sm">
+                        <div class="bg-gray-50 p-2 rounded-lg">
+                            <span class="text-gray-500">💰 Startup</span>
+                            <div class="font-semibold">${h.startup}</div>
+                        </div>
+                        <div class="bg-gray-50 p-2 rounded-lg">
+                            <span class="text-gray-500">📈 Income</span>
+                            <div class="font-semibold text-green-600">${h.income}</div>
+                        </div>
+                    </div>
+                    <div class="mt-4 bg-green-50 p-3 rounded-lg">
+                        <span class="text-xs text-green-600 font-semibold">⛓️ ${h.eaco}</span>
+                    </div>
+                </div>
+            `).join('');
+            
+            document.getElementById('loadMoreBtn').style.display = end >= filtered.length ? 'none' : 'block';
+        }
+
+        function getCategoryColor(cat) {
+            const colors = { content: 'blue', tech: 'purple', ecommerce: 'orange', marketing: 'pink', logistics: 'cyan', finance: 'yellow', compliance: 'red', web3: 'indigo', education: 'teal', lifestyle: 'green' };
+            return colors[cat] || 'gray';
+        }
+
+        function filterByCategory(cat) {
+            currentFilter = cat;
+            currentPage = 1;
+            document.querySelectorAll('.category-badge, button[class*="rounded-xl"]').forEach(b => b.classList.remove('ring-2', 'ring-green-500'));
+            renderHustles();
+            document.getElementById('hustlesTitle').textContent = cat ? `${cat.toUpperCase()} Hustles (${hustles.filter(h => h.category === cat).length})` : '🔥 All Hustles';
+        }
+
+        function sortBy(type) {
+            currentSort = type;
+            renderHustles();
+        }
+
+        function loadMore() {
+            currentPage++;
+            renderHustles();
+        }
+
+        function showRandom() {
+            const random = hustles[Math.floor(Math.random() * hustles.length)];
+            showDetail(random.id);
+        }
+
+        function showDetail(id) {
+            alert(` Hustle #${id} Details:\\n\\n🌟 Contact us to get the full guide!\\n\\nContract: DqfoyZH96RnvZusSp3Cdncjpyp3C74ZmJzGhjmHnDHRH`);
+        }
+
+        function scrollToCategory(cat) {
+            document.getElementById('categories').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Search functionality
+        document.getElementById('searchInput').addEventListener('input', (e) => {
+            const query = e.target.value.toLowerCase();
+            if (query.length > 2) {
+                const results = hustles.filter(h => 
+                    h.title.toLowerCase().includes(query) || 
+                    h.altruistic.toLowerCase().includes(query)
+                );
+                const grid = document.getElementById('hustlesGrid');
+                grid.innerHTML = results.slice(0, 30).map(h => `
+                    <div class="bg-white rounded-xl p-6 shadow-md card-hover cursor-pointer" onclick="showDetail(${h.id})">
+                        <div class="flex items-center gap-3 mb-4">
+                            <span class="text-3xl">${h.emoji}</span>
+                            <span class="text-xs bg-${getCategoryColor(h.category)}-100 text-${getCategoryColor(h.category)}-700 px-2 py-1 rounded-full">${h.category}</span>
+                        </div>
+                        <h4 class="font-bold text-lg mb-2">${h.title}</h4>
+                        <p class="text-gray-600 text-sm mb-4">${h.altruistic}</p>
+                        <div class="mt-4 bg-green-50 p-3 rounded-lg">
+                            <span class="text-xs text-green-600 font-semibold">⛓️ ${h.eaco}</span>
+                        </div>
+                    </div>
+                `).join('');
+                document.getElementById('hustlesTitle').textContent = `Search Results (${results.length})`;
+            } else {
+                renderHustles();
+            }
+        });
+
+        // Category filter dropdown
+        document.getElementById('categoryFilter').addEventListener('change', (e) => {
+            filterByCategory(e.target.value);
+        });
+
+        // Initial render
+        renderHustles();
+    </script>
+</body>
+</html>
