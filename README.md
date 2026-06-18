@@ -1,11 +1,17 @@
 # 🌏 EACO 1000 Side Hustles for Monetization
 
 > 利他利己，创造价值 | Create Value First, Profit Follows
+> 
+> **The only $eaco in the universe and the earth.**
+> 
+> EACO ($e) is an innovative currency, the only $eaco in the universe and the earth.
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
-[![Contract: EACO](https://img.shields.io/badge/Contract-DqfoyZH96RnvZusSp3Cdncjpyp3C74ZmJzGhjmHnDHRH-blue)](https://etherscan.io/address/DqfoyZH96RnvZusSp3Cdncjpyp3C74ZmJzGhjmHnDHRH)
+[![Contract: EACO](https://img.shields.io/badge/Contract-DqfoyZH96RnvZusSp3Cdncjpyp3C74ZmJzGhjmHnDHRH-blue)](https://solscan.io/token/DqfoyZH96RnvZusSp3Cdncjpyp3C74ZmJzGhjmHnDHRH)
 
-## 📖 About
+---
+
+## 📖 About EACO
 
 **EACO 1000** is a comprehensive knowledge base of 1000利他 (altruistic) side hustles for monetization, specifically designed for:
 - 🔄 Cross-border E-commerce Entrepreneurs
@@ -13,7 +19,16 @@
 - 🌐 Digital Nomads & Remote Workers
 - 📈 Freelancers & Digital Service Providers
 
-Each hustle follows the **EACO Philosophy**: **E**nergy + **A**ttitude + **C**ooperation = **O**utcomes
+**EACO ($e)** is an innovative currency based on Solana contract:
+```
+CA: DqfoyZH96RnvZusSp3Cdncjpyp3C74ZmJzGhjmHnDHRH
+```
+
+As the MEME coin of villagers around the Earth, EACO aims to promote environmental protection and sustainable development, integrate decentralized finance and digital assets, and become the representative of future personal core assets.
+
+**EACO (Earth's best Coin)**
+
+---
 
 ## 🎯 Key Features
 
@@ -21,8 +36,10 @@ Each hustle follows the **EACO Philosophy**: **E**nergy + **A**ttitude + **C**oo
 - ✅ **EACO Token Integration** - Each hustle includes EACO incentive model
 - ✅ **利他 (Altruistic) First** - Value creation before profit
 - ✅ **Multi-language Support** - 中文/English/日本語/한국어/ภาษาไทย/Bahasa
-- ✅ **Weekly Auto-Updates** - Every Saturday 10:00 AM (Asia/Shanghai)
+- ✅ **Weekly Auto-Updates** - Every Thursday 8:00 AM (Asia/Shanghai)
 - ✅ **Mobile-First Design** - PWA + App ready
+
+---
 
 ## 📂 Categories
 
@@ -39,10 +56,17 @@ Each hustle follows the **EACO Philosophy**: **E**nergy + **A**ttitude + **C**oo
 | 9 | 🎓 Education | 教育培训系 | 100 |
 | 10 | ❤️ Lifestyle | 生活方式系 | 100 |
 
+---
+
 ## 🚀 Quick Start
 
 ### Web Version
 Simply open `index.html` in any modern browser - no build required!
+
+**GitHub Pages (Auto Deployed):**
+```
+https://ucoingroup.github.io/eaoc-1000-side-hustles
+```
 
 ### Mobile App
 ```bash
@@ -59,6 +83,8 @@ npm run android
 npm run ios
 ```
 
+---
+
 ## 💰 EACO Token Integration
 
 Each hustle includes EACO token incentive mechanisms:
@@ -71,14 +97,23 @@ Each hustle includes EACO token incentive mechanisms:
 | 💎 Subscriptions | Monthly EACO subscription models |
 | 🤝 Partnerships | Long-term EACO sharing agreements |
 
-**EACO Contract Address:**
+**EACO Contract Address (Solana):**
 ```
 DqfoyZH96RnvZusSp3Cdncjpyp3C74ZmJzGhjmHnDHRH
 ```
 
+**Buy EACO:**
+- Raydium Swap: https://raydium.io/swap/?inputMint=sol&outputMint=DqfoyZH96RnvZusSp3Cdncjpyp3C74ZmJzGhjmHnDHRH
+- Meteora DLMM (E-SOL): https://app.meteora.ag/dlmm/6ZfCi3qzhgDN1ygHVYXvfsfrwz8ZhQ7hD5mJtjeuUDyE
+- Meteora DLMM (E-USDT): https://app.meteora.ag/dlmm/GsDB4iKELP7KDVjn5ZcHsJhWRY8J3HqTxvE86zyDhV34
+
+---
+
 ## 📱 Screenshots
 
 [Add screenshots here]
+
+---
 
 ## 🔥 Featured Hustles (Sample)
 
@@ -90,13 +125,17 @@ DqfoyZH96RnvZusSp3Cdncjpyp3C74ZmJzGhjmHnDHRH
 | 4 | Free SE Asian Market Research | $0 | $3000-15000 |
 | 5 | Free Logistics Comparison Tool | $5000 | $10000-25000 |
 
+---
+
 ## 🛠️ Tech Stack
 
 - **Frontend**: HTML5 + TailwindCSS + Vanilla JavaScript
 - **Mobile**: Capacitor + Vite
 - **Database**: Git-based (Markdown files)
-- **Smart Contracts**: EVM Compatible (Ethereum, BSC, Polygon)
-- **Updates**: Cron-based weekly automation
+- **Smart Contracts**: Solana Compatible
+- **Updates**: Cron-based weekly automation (Every Thursday 8:00 AM)
+
+---
 
 ## 📊 Project Structure
 
@@ -113,6 +152,8 @@ eaoc-1000-side-hustles/
 └── assets/            # Images and static assets
 ```
 
+---
+
 ## 🤝 Contributing
 
 1. **Fork** the repository
@@ -121,22 +162,42 @@ eaoc-1000-side-hustles/
 4. **Push** to the branch (`git push origin feature/amazing-hustle`)
 5. **Open** a Pull Request
 
+---
+
 ## 📅 Auto-Update Schedule
 
-- **Cron Job ID**: `85f7bbf0-3667-42c2-ac39-4f1c7c314269`
-- **Schedule**: Every Saturday at 10:00 AM (Asia/Shanghai)
+- **Cron Job**: Every **Thursday 8:00 AM** (Asia/Shanghai)
 - **Process**: Automatic content refresh and documentation update
+- **Goal**: Complete 1000 hustles by weekly updates
+
+---
 
 ## 📞 Contact & Community
 
-- 🌐 Website: [EACO Official](https://eaco.io)
-- 💬 Telegram: [EACO Community](https://t.me/eaco_community)
-- 🐦 Twitter: [@EACOProtocol](https://twitter.com/EACOProtocol)
-- 📧 Email: contact@eaco.io
+### Official Links
+
+- 🌐 **Linktree**: [https://linktr.ee/eacocc](https://linktr.ee/eacocc)
+- 🐦 **Twitter/X**: [@eacocc](https://x.com/eacocc)
+- 💬 **English Telegram**: [https://t.me/e_eacocc](https://t.me/e_eacocc)
+- 🀄 **华语社区**: [https://t.me/aieaco](https://t.me/aieaco)
+- 🇪🇸 **EACO Spanish Group**: [https://t.me/eacoespanish](https://t.me/eacoespanish)
+- 📧 **Email**: [eaco2cc@gmail.com](mailto:eaco2cc@gmail.com)
+
+### Resources
+
+- 💎 **Buy EACO (Raydium)**: [https://raydium.io/swap/?inputMint=sol&outputMint=DqfoyZH96RnvZusSp3Cdncjpyp3C74ZmJzGhjmHnDHRH](https://raydium.io/swap/?inputMint=sol&outputMint=DqfoyZH96RnvZusSp3Cdncjpyp3C74ZmJzGhjmHnDHRH)
+- 💦 **Add E-SOL Liquidity**: [https://app.meteora.ag/dlmm/6ZfCi3qzhgDN1ygHVYXvfsfrwz8ZhQ7hD5mJtjeuUDyE](https://app.meteora.ag/dlmm/6ZfCi3qzhgDN1ygHVYXvfsfrwz8ZhQ7hD5mJtjeuUDyE)
+- 💦 **Add E-USDT Liquidity**: [https://app.meteora.ag/dlmm/GsDB4iKELP7KDVjn5ZcHsJhWRY8J3HqTxvE86zyDhV34](https://app.meteora.ag/dlmm/GsDB4iKELP7KDVjn5ZcHsJhWRY8J3HqTxvE86zyDhV34)
+- 📄 **BitcoinTalk Forum**: [https://bitcointalk.org/index.php?topic=5526590](https://bitcointalk.org/index.php?topic=5526590)
+- 💻 **GitHub**: [https://github.com/eacocc/eaco](https://github.com/eacocc/eaco)
+
+---
 
 ## 📄 License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+---
 
 ## 🙏 Acknowledgments
 
@@ -147,6 +208,43 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ---
 
+## 💎 EACO Scarcity Model
+
+- **Total Supply**: 1.35 billion tokens
+- **Reserve Pool Lock**: ~30% of circulating supply locked by 20 countries' central bank reserves
+- **Vision**: To become the representative of future personal core assets
+
+---
+
+## 🔍 How to Verify EACO Information
+
+EACO community members have developed some methods to verify information authenticity:
+
+1. **Volunteer Test (1-6 months)**: Test to see how much effect there is, whether there is any effect.
+2. **Background Check**: Is this channel real? Does the owner really exist? Is there any effect? Must do investigation and background check.
+3. **Wallet Verification**: Is the Solana wallet address empty? Has there been any transaction? Does it have experience? Does it have ownership? (Example: Send 2000 EACO to you, can you immediately return 1000 EACO? Verify wallet ownership; also check payment time progress, payment method, payment amount flexibility)
+4. **Refund Policy**: If payment is received but no work is done for EACO or the effect is not achieved, are you willing to refund? Refund part or full refund?
+5. **Asset Proof**: What assets prove its authenticity? Besides Telegram channels, what other network resources are available? Can 1-100 SOL be added to increase E's liquidity?
+   - Increase E-SOL liquidity: https://raydium.io/swap/?inputMint=sol&outputMint=DqfoyZH96RnvZusSp3Cdncjpyp3C74ZmJzGhjmHnDHRH
+   - Increase E-USDT liquidity: https://app.meteora.ag/dlmm/6ZfCi3qzhgDN1ygHVYXvfsfrwz8ZhQ7hD5mJtjeuUDyE
+6. **Global Advantage Network Resources**: What other global advantage network resources can contribute to E's development?
+
+---
+
 **Made with ❤️ by the EACO Community**
 
 *利他者，自利之母也。 | Those who give to others, give to themselves.*
+
+---
+
+## 🌏 EACO (Earth's best Coin)
+
+Welcome to add SOL for E (EACO), thanks!
+- https://app.meteora.ag/dlmm/GsDB4iKELP7KDVjn5ZcHsJhWRY8J3HqTxvE86zyDhV34
+- https://bitcointalk.org/index.php?topic=5526590
+
+**$e = eaco**
+- GitHub: https://github.com/eacocc/eaco
+- Email: eaco2cc@gmail.com
+
+**GitHub Pages**: https://ucoingroup.github.io/eaoc-1000-side-hustles
